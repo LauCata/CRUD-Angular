@@ -1,0 +1,8 @@
+.task-container {
+    margin-top: 20px;
+}
+
+.image-container {
+    display: flex;
+    align-items: flex-start;
+}

@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-body">
+    <form (submit)="agregarTarea($event)">
+      <div class="input-group">
+        <input type="text" name="title" [(ngModel)]="title" placeholder="Agregar Tarea" class="form-control">
+        <span class="input-group-addon">
+           <button type="submit" class="btn btn-dark">
+              <i class="fa fa-plus-circle"></i>
+           </button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Estado</th>
+      <th>Titulo</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tarea of tareas">
+      <td>
+        <input type="checkbox" [checked]="tarea.isDone" (click)="actualizarTarea(tarea)">
+      </td>
+      <td>
+        {{ tarea.title }}
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="eliminarTarea(tarea._id)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
